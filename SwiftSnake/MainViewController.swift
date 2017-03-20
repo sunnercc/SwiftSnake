@@ -17,14 +17,19 @@ enum Direction {
 
 class MainViewController: UIViewController {
 
+    /// 游戏场地
     var gameGound: GameGround? = nil
     
+    /// 蛇的移动方向
     var snakeMoveDir: Direction = .DirectionDown
     
+    /// 存放蛇的数组
     var snakeBodys:[Box] = [Box]()
     
+    /// 随机生成的事物
     var food:Box? = nil
     
+    /// 定时器
     lazy var timer: Timer? = nil
     
     override func viewDidLoad() {
@@ -32,14 +37,19 @@ class MainViewController: UIViewController {
         
         self.view.backgroundColor = .gray
         
+        /// 添加游戏场地
         self.addGameGround()
         
+        /// 添加方向按键
         self.addControls()
         
+        /// 初始化蛇数组
         self.initialSnakeBodys()
         
+        /// 初始化事物
         self.initialFoods()
         
+        /// 开始游戏
         self.startGame()
     }
 
@@ -115,12 +125,35 @@ extension MainViewController {
         
         let header = self.snakeBodys.first
         if let header = header , let food = self.food {
-            if header.pos.x == food.pos.x
+            if header.pos.x-1 == food.pos.x
                && header.pos.y == food.pos.y {
-                self.snakeBodys.insert(header, at: 0)
-                
+                self.snakeBodys.append(food)
+                food.boxType = .BoxTypeSnakeBody
                 self.initialFoods()
             }
+            
+            if header.pos.x+1 == food.pos.x
+                && header.pos.y == food.pos.y {
+                self.snakeBodys.append(food)
+                food.boxType = .BoxTypeSnakeBody
+                self.initialFoods()
+            }
+            
+            if header.pos.x == food.pos.x
+                && header.pos.y+1 == food.pos.y {
+                self.snakeBodys.append(food)
+                food.boxType = .BoxTypeSnakeBody
+                self.initialFoods()
+            }
+            
+            if header.pos.x == food.pos.x
+                && header.pos.y-1 == food.pos.y {
+                self.snakeBodys.append(food)
+                food.boxType = .BoxTypeSnakeBody
+                self.initialFoods()
+            }
+            
+            
         }
         
         switch self.snakeMoveDir {

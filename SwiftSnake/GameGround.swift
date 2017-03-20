@@ -13,7 +13,10 @@ class GameGround: UIView {
     /// 存储box的二维数组
     var boxArrs: [[Box]] = [[Box]]()
     
+    /// 一行存储的box数量
     var rowCount: Int = Int(goundGameW / boxW)
+    
+    /// 一列存储的box数量
     var columnCount: Int = Int(goundGameH / boxH)
     
     
@@ -23,9 +26,8 @@ class GameGround: UIView {
         self.backgroundColor = .white
         self.layer.cornerRadius = 5
         
+        /// 布局boxes
         self.layoutBoxes()
-        
-//        self.defaultSnake()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -35,6 +37,7 @@ class GameGround: UIView {
 
 extension GameGround {
     
+    /// 布局boxes
     fileprivate func layoutBoxes() {
      
         let rowEdgeMargin: CGFloat = (goundGameW - boxW * CGFloat(self.rowCount)) * 0.5

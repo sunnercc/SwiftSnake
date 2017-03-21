@@ -14,6 +14,10 @@
 		133528B71E7F79C0000AB9CA /* GameGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133528B61E7F79C0000AB9CA /* GameGround.swift */; };
 		133528B91E7F7A6F000AB9CA /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133528B81E7F7A6F000AB9CA /* Const.swift */; };
 		133528BB1E7F8A26000AB9CA /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133528BA1E7F8A26000AB9CA /* Box.swift */; };
+		1341AD101E80F8F1000393B1 /* GameMainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1341AD0F1E80F8F1000393B1 /* GameMainScreenView.swift */; };
+		1341AD121E80FE42000393B1 /* WallBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1341AD111E80FE42000393B1 /* WallBox.swift */; };
+		1341AD171E813116000393B1 /* GameControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1341AD161E813116000393B1 /* GameControl.swift */; };
+		1341AD191E81396F000393B1 /* GesControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1341AD181E81396F000393B1 /* GesControls.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		133528B61E7F79C0000AB9CA /* GameGround.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameGround.swift; sourceTree = "<group>"; };
 		133528B81E7F7A6F000AB9CA /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		133528BA1E7F8A26000AB9CA /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		1341AD0F1E80F8F1000393B1 /* GameMainScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMainScreenView.swift; sourceTree = "<group>"; };
+		1341AD111E80FE42000393B1 /* WallBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallBox.swift; sourceTree = "<group>"; };
+		1341AD161E813116000393B1 /* GameControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameControl.swift; sourceTree = "<group>"; };
+		1341AD181E81396F000393B1 /* GesControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GesControls.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +66,14 @@
 		133528A11E7F77FC000AB9CA /* SwiftSnake */ = {
 			isa = PBXGroup;
 			children = (
+				1341AD161E813116000393B1 /* GameControl.swift */,
 				133528BA1E7F8A26000AB9CA /* Box.swift */,
 				133528B81E7F7A6F000AB9CA /* Const.swift */,
 				133528B61E7F79C0000AB9CA /* GameGround.swift */,
 				133528B41E7F7844000AB9CA /* MainViewController.swift */,
+				1341AD111E80FE42000393B1 /* WallBox.swift */,
+				1341AD0F1E80F8F1000393B1 /* GameMainScreenView.swift */,
+				1341AD181E81396F000393B1 /* GesControls.swift */,
 				133528A21E7F77FC000AB9CA /* AppDelegate.swift */,
 				133528A91E7F77FC000AB9CA /* Assets.xcassets */,
 				133528AB1E7F77FC000AB9CA /* LaunchScreen.storyboard */,
@@ -145,8 +157,12 @@
 				133528A31E7F77FC000AB9CA /* AppDelegate.swift in Sources */,
 				133528B91E7F7A6F000AB9CA /* Const.swift in Sources */,
 				133528B71E7F79C0000AB9CA /* GameGround.swift in Sources */,
+				1341AD101E80F8F1000393B1 /* GameMainScreenView.swift in Sources */,
 				133528B51E7F7844000AB9CA /* MainViewController.swift in Sources */,
 				133528BB1E7F8A26000AB9CA /* Box.swift in Sources */,
+				1341AD121E80FE42000393B1 /* WallBox.swift in Sources */,
+				1341AD191E81396F000393B1 /* GesControls.swift in Sources */,
+				1341AD171E813116000393B1 /* GameControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +283,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = chenchenhui.SwiftSnake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -280,6 +297,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = chenchenhui.SwiftSnake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -302,6 +320,7 @@
 				133528B31E7F77FC000AB9CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

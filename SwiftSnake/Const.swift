@@ -17,8 +17,14 @@ let screenH: CGFloat = UIScreen.main.bounds.height
 /// iphone状态栏高度
 let statusBarH: CGFloat = 20
 
+/// 游戏城墙格子大小
+let wallBoxW: CGFloat = 15
+
+/// 游戏城墙格子大小
+let wallBoxH: CGFloat = wallBoxW
+
 /// 游戏方格宽度
-let boxW: CGFloat = 30
+let boxW: CGFloat = wallBoxW
 
 /// 游戏方格高度
 let boxH: CGFloat = boxW
@@ -29,12 +35,12 @@ let btnMargin: CGFloat = 10
 /// 控制按钮高度
 let btnH: CGFloat = 30
 
-/// 游戏区域外间距
-let gameGoundMargin: CGFloat = btnMargin
+/// 方向枚举
+enum Direction {
+    case DirectionUp
+    case DirectionDown
+    case DirectionLeft
+    case DirectionRight
+}
 
-/// 游戏区域高度
-let goundGameH: CGFloat = screenH - gameGoundMargin * 2 - statusBarH - btnH
-
-/// 游戏区域宽度
-let goundGameW: CGFloat = screenW - gameGoundMargin * 2
 

@@ -14,20 +14,36 @@ class GameGround: UIView {
     var boxArrs: [[Box]] = [[Box]]()
     
     /// 一行存储的box数量
-    var rowCount: Int = Int(goundGameW / boxW)
+    var rowCount: Int = 0
     
     /// 一列存储的box数量
-    var columnCount: Int = Int(goundGameH / boxH)
+    var columnCount: Int = 0
+    
+    /// 蛇的移动方向
+    var snakeMoveDir: Direction = .DirectionDown
+    
+    /// 存放蛇的数组
+    var snakeBodys:[Box] = [Box]()
+    
+    /// 随机生成的事物
+    var food:Box? = nil
     
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.backgroundColor = .white
+        self.backgroundColor = .clear
         self.layer.cornerRadius = 5
         
         /// 布局boxes
         self.layoutBoxes()
+        
+        /// 初始化蛇数组
+        self.initialSnakeBodys()
+        
+        /// 初始化食物
+        self.initialFoods()
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -40,9 +56,13 @@ extension GameGround {
     /// 布局boxes
     fileprivate func layoutBoxes() {
      
-        let rowEdgeMargin: CGFloat = (goundGameW - boxW * CGFloat(self.rowCount)) * 0.5
+        /// 赋值
+        self.rowCount = Int(self.bounds.size.width / boxW)
+        self.columnCount = Int(self.bounds.size.height / boxH)
         
-        let columnEdgeMargin: CGFloat = (goundGameH - boxH * CGFloat(self.columnCount)) * 0.5
+        let rowEdgeMargin: CGFloat = (self.bounds.size.width - boxW * CGFloat(self.rowCount)) * 0.5
+        
+        let columnEdgeMargin: CGFloat = (self.bounds.size.height - boxH * CGFloat(self.columnCount)) * 0.5
         
         for row in 0..<self.rowCount {
             
@@ -62,5 +82,26 @@ extension GameGround {
                 self.addSubview(box)
             }
         }
+    }
+    
+    fileprivate func initialSnakeBodys() {
+        
+        self.snakeBodys.append(self.boxArrs[7][5])
+        self.boxArrs[7][5].boxType = .BoxTypeSnakeHeader
+        self.snakeBodys.append(self.boxArrs[6][5])
+        self.boxArrs[6][5].boxType = .BoxTypeSnakeBody
+        self.snakeBodys.append(self.boxArrs[5][5])
+        self.boxArrs[5][5].boxType = .BoxTypeSnakeBody
+        
+    }
+    
+    func initialFoods() {
+        
+        let x = arc4random_uniform(UInt32(self.rowCount))
+        let y = arc4random_uniform(UInt32(self.columnCount))
+        
+        self.food = self.boxArrs[Int(x)][Int(y)]
+        self.food?.boxType = .BoxTypeFood
+        
     }
 }

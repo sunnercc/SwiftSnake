@@ -18,6 +18,7 @@
 		1341AD121E80FE42000393B1 /* WallBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1341AD111E80FE42000393B1 /* WallBox.swift */; };
 		1341AD171E813116000393B1 /* GameControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1341AD161E813116000393B1 /* GameControl.swift */; };
 		1341AD191E81396F000393B1 /* GesControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1341AD181E81396F000393B1 /* GesControls.swift */; };
+		137A4B4D1E823F670047A2A7 /* GameMsg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137A4B4C1E823F670047A2A7 /* GameMsg.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		1341AD111E80FE42000393B1 /* WallBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallBox.swift; sourceTree = "<group>"; };
 		1341AD161E813116000393B1 /* GameControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameControl.swift; sourceTree = "<group>"; };
 		1341AD181E81396F000393B1 /* GesControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GesControls.swift; sourceTree = "<group>"; };
+		137A4B4C1E823F670047A2A7 /* GameMsg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMsg.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		133528A11E7F77FC000AB9CA /* SwiftSnake */ = {
 			isa = PBXGroup;
 			children = (
+				137A4B4C1E823F670047A2A7 /* GameMsg.swift */,
 				1341AD161E813116000393B1 /* GameControl.swift */,
 				133528BA1E7F8A26000AB9CA /* Box.swift */,
 				133528B81E7F7A6F000AB9CA /* Const.swift */,
@@ -163,6 +166,7 @@
 				1341AD121E80FE42000393B1 /* WallBox.swift in Sources */,
 				1341AD191E81396F000393B1 /* GesControls.swift in Sources */,
 				1341AD171E813116000393B1 /* GameControl.swift in Sources */,
+				137A4B4D1E823F670047A2A7 /* GameMsg.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

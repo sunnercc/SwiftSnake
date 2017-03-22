@@ -8,15 +8,21 @@
 
 import UIKit
 
-class GameMainScreenView: UIView {
+class GameMainScreenView: UIImageView {
 
     /// 游戏区域frame
     var gameGroundFrame: CGRect = CGRect()
     
+    /// 游戏信息区域frame
+    var gameMsgFrame: CGRect = CGRect()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.backgroundColor = .black
+//        self.backgroundColor = .black
+        self.image = UIImage(named: "bg")
+        
+        self.isUserInteractionEnabled = true
         
         /// 布局游戏城墙
         self.layoutGameWalls()
@@ -79,6 +85,12 @@ class GameMainScreenView: UIView {
         self.gameGroundFrame.origin.y = columnMargin + wallBoxH
         self.gameGroundFrame.size.width = x - wallBoxW - rowMargin
         self.gameGroundFrame.size.height = y - wallBoxH - columnMargin
+        
+        /// 赋值gameMsgFrame
+        self.gameMsgFrame.origin.x = x + wallBoxW
+        self.gameMsgFrame.origin.y = self.gameGroundFrame.origin.y
+        self.gameMsgFrame.size.width = self.bounds.size.width - wallBoxW * 2 - rowMargin - x
+        self.gameMsgFrame.size.height = self.gameGroundFrame.size.height
         
     }
 }

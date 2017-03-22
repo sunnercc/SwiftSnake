@@ -22,7 +22,7 @@ enum BoxType {
     case BoxTypeGround           // 游戏区域原始box
 }
 
-class Box: UIView {
+class Box: UIImageView {
     
     /// box类型
     var boxType: BoxType = .BoxTypeGround {
@@ -42,21 +42,31 @@ class Box: UIView {
             self.layer.cornerRadius = 5
             self.layer.borderColor = UIColor.clear.cgColor
             self.layer.borderWidth = 0.5
+            self.image = nil
         } else if self.boxType == .BoxTypeFood {
-            self.backgroundColor = .blue
-            self.layer.cornerRadius = 5
-            self.layer.borderColor = UIColor.white.cgColor
-            self.layer.borderWidth = 0.5
+//            self.backgroundColor = .blue
+//            self.layer.cornerRadius = 5
+//            self.layer.borderColor = UIColor.white.cgColor
+//            self.layer.borderWidth = 0.5
+            self.backgroundColor = .clear
+            let foodIndex = arc4random_uniform(8)
+            self.image = UIImage(named: "food\(foodIndex)")
+            
         } else if self.boxType == .BoxTypeSnakeHeader {
-            self.backgroundColor = .white
-            self.layer.cornerRadius = boxW * 0.5
-            self.layer.borderColor = UIColor.white.cgColor
-            self.layer.borderWidth = 0.5
+//            self.backgroundColor = .white
+//            self.layer.cornerRadius = boxW * 0.5
+//            self.layer.borderColor = UIColor.white.cgColor
+//            self.layer.borderWidth = 0.5
+            self.backgroundColor = .clear
+            self.image = #imageLiteral(resourceName: "snakeHeader")
+            
         } else if self.boxType == .BoxTypeSnakeBody {
-            self.backgroundColor = .yellow
-            self.layer.cornerRadius = 5
-            self.layer.borderColor = UIColor.white.cgColor
-            self.layer.borderWidth = 0.5
+//            self.backgroundColor = .yellow
+//            self.layer.cornerRadius = 5
+//            self.layer.borderColor = UIColor.white.cgColor
+//            self.layer.borderWidth = 0.5
+            self.backgroundColor = .clear
+            self.image = #imageLiteral(resourceName: "snakeBody")
         }
     }
 

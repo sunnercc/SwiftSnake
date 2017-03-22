@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class MainViewController: UIViewController {
 
     /// 游戏全屏view
@@ -16,6 +15,9 @@ class MainViewController: UIViewController {
     
     /// 游戏场地
     var gameGround: GameGround? = nil
+    
+    /// 游戏信息view
+    var gameMsg: GameMsg? = nil
     
     /// 游戏控制
     var gameControl: GameControl? = nil
@@ -40,7 +42,6 @@ class MainViewController: UIViewController {
         /// 开始游戏
         self.gameControl?.startGame()
     }
-    
 }
 
 extension MainViewController {
@@ -52,9 +53,16 @@ extension MainViewController {
             self.view.addSubview(gameMainScrren)
         }
         
+        /// 添加游戏区域
         self.gameGround = GameGround(frame: (self.gameMainScrren?.gameGroundFrame)!)
         if let gameGround = self.gameGround {
             self.gameMainScrren?.addSubview(gameGround)
+        }
+        
+        /// 添加游戏信息区域
+        self.gameMsg = GameMsg(frame: (self.gameMainScrren?.gameMsgFrame)!)
+        if let gameMsg = self.gameMsg {
+            self.gameMainScrren?.addSubview(gameMsg)
         }
     }
     
@@ -68,8 +76,8 @@ extension MainViewController {
     
     fileprivate func addGameControls() {
         
-        if let gameGround = self.gameGround {
-            self.gameControl = GameControl(gameGround: gameGround)
+        if let gameGround = self.gameGround, let gameMsg = self.gameMsg {
+            self.gameControl = GameControl(gameGround: gameGround, gameMsg: gameMsg)
         }
     }
     

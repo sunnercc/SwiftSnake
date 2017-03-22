@@ -13,10 +13,8 @@
 * 蛇撞墙或撞到自己,均会死亡,即游戏暂停
 
 ## 项目截图
-*目录结构
-	*  ![目录结构](https://github.com/chenchenhui/SwiftSnake/blob/master/resources/1.png)
-* 游戏截屏
-	* ![游戏截屏](https://github.com/chenchenhui/SwiftSnake/blob/master/resources/2.png)
+* ![目录结构](https://github.com/chenchenhui/SwiftSnake/blob/master/resources/1.png)
+* ![游戏截屏](https://github.com/chenchenhui/SwiftSnake/blob/master/resources/2.png)
 	
 ## UI网站
 *  <http://www.iconfont.cn/>

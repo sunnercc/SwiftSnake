@@ -123,7 +123,6 @@ extension GameControl {
             if self.deferSnakeNextAction(x: x, y: y!) == false {
                 return
             }
-            
         }
         
         // 遍历蛇身,如果发现是headerType就更改为bodyType
@@ -136,7 +135,6 @@ extension GameControl {
                 self.gameGround?.snakeBodys[i].boxType = .BoxTypeSnakeBody
             }
         }
-        
         
         // 更改显示界面以及时间调整
         self.udpateMsgAndTimer()
